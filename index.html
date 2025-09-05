@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Feedback</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- WELCOME -->
+<section id="welcome" class="screen active">
+  <div class="welcome-wrap">
+    <div id="welcome-text" class="fade-text big">Добро пожаловать!</div>
+    <p id="welcome-lead" class="fade-text small">Пожалуйста, выберите язык, чтобы продолжить.</p>
+    <div class="lang-buttons">
+      <button class="btn" onclick="showForm('ru')">Русский</button>
+      <button class="btn" onclick="showForm('en')">English</button>
+    </div>
+  </div>
+</section>
+
+<!-- RUSSIAN FORM -->
+<section id="form-screen-ru" class="screen">
+  <div class="wrap">
+    <form class="card" action="#" method="post">
+      <div class="card-header">
+        <h1 class="title">Отзыв о событии</h1>
+        <p class="subtitle">Вы можете написать здесь всё, что думаете о событии.</p>
+      </div>
+
+      <div class="card-body">
+        <!-- Event select -->
+        <div class="form-row">
+          <label for="event-ru" class="req">Какое событие вы посетили?</label>
+          <select id="event-ru" name="event" required>
+            <option value="" selected disabled>Выберите</option>
+            <option>Саммит по дизайну 2025</option>
+            <option>Стартап митап</option>
+            <option>JS Conf</option>
+            <option>Музыкальная ночь</option>
+          </select>
+        </div>
+
+        <!-- Q1 -->
+        <fieldset class="form-row">
+          <legend class="req">Насколько мероприятие было увлекательным?</legend>
+          <div class="scale" role="radiogroup" aria-label="Шкала увлекательности 1–10">
+            <label class="bubble"><input type="radio" name="rate-entertain-ru" value="1" required>1</label>
+            <label class="bubble"><input type="radio" name="rate-entertain-ru" value="2">2</label>
+            <label class="bubble"><input type="radio" name="rate-entertain-ru" value="3">3</label>
+            <label class="bubble"><input type="radio" name="rate-entertain-ru" value="4">4</label>
+            <label class="bubble"><input type="radio" name="rate-entertain-ru" value="5">5</label>
+            <label class="bubble"><input type="radio" name="rate-entertain-ru" value="6">6</label>
+            <label class="bubble"><input type="radio" name="rate-entertain-ru" value="7">7</label>
+            <label class="bubble"><input type="radio" name="rate-entertain-ru" value="8">8</label>
+            <label class="bubble"><input type="radio" name="rate-entertain-ru" value="9">9</label>
+            <label class="bubble"><input type="radio" name="rate-entertain-ru" value="10">10</label>
+            <div class="scale-caption"><span>Скучно</span><span>Потрясающе</span></div>
+          </div>
+        </fieldset>
+
+        <!-- Q2 -->
+        <fieldset class="form-row">
+          <legend class="req">Как вы оцениваете спикера?</legend>
+          <div class="scale" role="radiogroup" aria-label="Шкала вдохновения 1–10">
+            <label class="bubble"><input type="radio" name="rate-inspired-ru" value="1" required>1</label>
+            <label class="bubble"><input type="radio" name="rate-inspired-ru" value="2">2</label>
+            <label class="bubble"><input type="radio" name="rate-inspired-ru" value="3">3</label>
+            <label class="bubble"><input type="radio" name="rate-inspired-ru" value="4">4</label>
+            <label class="bubble"><input type="radio" name="rate-inspired-ru" value="5">5</label>
+            <label class="bubble"><input type="radio" name="rate-inspired-ru" value="6">6</label>
+            <label class="bubble"><input type="radio" name="rate-inspired-ru" value="7">7</label>
+            <label class="bubble"><input type="radio" name="rate-inspired-ru" value="8">8</label>
+            <label class="bubble"><input type="radio" name="rate-inspired-ru" value="9">9</label>
+            <label class="bubble"><input type="radio" name="rate-inspired-ru" value="10">10</label>
+            <div class="scale-caption"><span>Совсем нет</span><span>Очень вдохновлён(а)</span></div>
+          </div>
+        </fieldset>
+
+        <!-- Q3 -->
+        <fieldset class="form-row">
+          <legend class="req">Как вы оцениваете организацию конференции?</legend>
+          <div class="scale" role="radiogroup" aria-label="Шкала ценности 1–10">
+            <label class="bubble"><input type="radio" name="rate-value-ru" value="1" required>1</label>
+            <label class="bubble"><input type="radio" name="rate-value-ru" value="2">2</label>
+            <label class="bubble"><input type="radio" name="rate-value-ru" value="3">3</label>
+            <label class="bubble"><input type="radio" name="rate-value-ru" value="4">4</label>
+            <label class="bubble"><input type="radio" name="rate-value-ru" value="5">5</label>
+            <label class="bubble"><input type="radio" name="rate-value-ru" value="6">6</label>
+            <label class="bubble"><input type="radio" name="rate-value-ru" value="7">7</label>
+            <label class="bubble"><input type="radio" name="rate-value-ru" value="8">8</label>
+            <label class="bubble"><input type="radio" name="rate-value-ru" value="9">9</label>
+            <label class="bubble"><input type="radio" name="rate-value-ru" value="10">10</label>
+            <div class="scale-caption"><span>Совсем нет</span><span>Определённо</span></div>
+          </div>
+        </fieldset>
+
+        <!-- Free text -->
+        <div class="form-row">
+          <label for="comments-ru">Хотите добавить что-то ещё?</label>
+          <textarea id="comments-ru" name="comments" placeholder="Поделитесь впечатлениями, предложениями или проблемами…"></textarea>
+          <div class="hint">Ваш отзыв поможет нам сделать следующее событие лучше.</div>
+        </div>
+
+        <!-- Actions -->
+        <div class="actions">
+          <button class="btn primary" type="submit">Отправить отзыв</button>
+          <button class="btn ghost" type="reset">Сбросить</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ENGLISH FORM -->
+<section id="form-screen-en" class="screen">
+  <div class="wrap">
+    <form class="card" action="#" method="post">
+      <div class="card-header">
+        <h1 class="title">Event Feedback</h1>
+        <p class="subtitle">You can write anything in here about the event.</p>
+      </div>
+
+      <div class="card-body">
+        <!-- Event select -->
+        <div class="form-row">
+          <label for="event-en" class="req">Which event did you attend?</label>
+          <select id="event-en" name="event" required>
+            <option value="" selected disabled>Please Select</option>
+            <option>Design Summit 2025</option>
+            <option>Startup Meetup</option>
+            <option>JS Conf</option>
+            <option>Music Night</option>
+          </select>
+        </div>
+
+        <!-- Q1 -->
+        <fieldset class="form-row">
+          <legend class="req">Overall, how entertaining was the event?</legend>
+          <div class="scale" role="radiogroup" aria-label="Entertaining scale 1 to 10">
+            <label class="bubble"><input type="radio" name="rate-entertain-en" value="1" required>1</label>
+            <label class="bubble"><input type="radio" name="rate-entertain-en" value="2">2</label>
+            <label class="bubble"><input type="radio" name="rate-entertain-en" value="3">3</label>
+            <label class="bubble"><input type="radio" name="rate-entertain-en" value="4">4</label>
+            <label class="bubble"><input type="radio" name="rate-entertain-en" value="5">5</label>
+            <label class="bubble"><input type="radio" name="rate-entertain-en" value="6">6</label>
+            <label class="bubble"><input type="radio" name="rate-entertain-en" value="7">7</label>
+            <label class="bubble"><input type="radio" name="rate-entertain-en" value="8">8</label>
+            <label class="bubble"><input type="radio" name="rate-entertain-en" value="9">9</label>
+            <label class="bubble"><input type="radio" name="rate-entertain-en" value="10">10</label>
+            <div class="scale-caption"><span>Boring</span><span>Fantastic</span></div>
+          </div>
+        </fieldset>
+
+        <!-- Q2 -->
+        <fieldset class="form-row">
+          <legend class="req">How do you rate the speaker?</legend>
+          <div class="scale" role="radiogroup" aria-label="Inspired scale 1 to 10">
+            <label class="bubble"><input type="radio" name="rate-inspired-en" value="1" required>1</label>
+            <label class="bubble"><input type="radio" name="rate-inspired-en" value="2">2</label>
+            <label class="bubble"><input type="radio" name="rate-inspired-en" value="3">3</label>
+            <label class="bubble"><input type="radio" name="rate-inspired-en" value="4">4</label>
+            <label class="bubble"><input type="radio" name="rate-inspired-en" value="5">5</label>
+            <label class="bubble"><input type="radio" name="rate-inspired-en" value="6">6</label>
+            <label class="bubble"><input type="radio" name="rate-inspired-en" value="7">7</label>
+            <label class="bubble"><input type="radio" name="rate-inspired-en" value="8">8</label>
+            <label class="bubble"><input type="radio" name="rate-inspired-en" value="9">9</label>
+            <label class="bubble"><input type="radio" name="rate-inspired-en" value="10">10</label>
+            <div class="scale-caption"><span>None</span><span>Fired up!</span></div>
+          </div>
+        </fieldset>
+
+        <!-- Q3 -->
+        <fieldset class="form-row">
+          <legend class="req">How would you rate the organization of the conference?</legend>
+          <div class="scale" role="radiogroup" aria-label="Value scale 1 to 10">
+            <label class="bubble"><input type="radio" name="rate-value-en" value="1" required>1</label>
+            <label class="bubble"><input type="radio" name="rate-value-en" value="2">2</label>
+            <label class="bubble"><input type="radio" name="rate-value-en" value="3">3</label>
+            <label class="bubble"><input type="radio" name="rate-value-en" value="4">4</label>
+            <label class="bubble"><input type="radio" name="rate-value-en" value="5">5</label>
+            <label class="bubble"><input type="radio" name="rate-value-en" value="6">6</label>
+            <label class="bubble"><input type="radio" name="rate-value-en" value="7">7</label>
+            <label class="bubble"><input type="radio" name="rate-value-en" value="8">8</label>
+            <label class="bubble"><input type="radio" name="rate-value-en" value="9">9</label>
+            <label class="bubble"><input type="radio" name="rate-value-en" value="10">10</label>
+            <div class="scale-caption"><span>Not at all</span><span>Definitely</span></div>
+          </div>
+        </fieldset>
+
+        <!-- Free text -->
+        <div class="form-row">
+          <label for="comments-en">Anything else you'd like to add?</label>
+          <textarea id="comments-en" name="comments" placeholder="Share your highlights, suggestions, or issues…"></textarea>
+          <div class="hint">Your feedback helps us make the next event better.</div>
+        </div>
+
+        <!-- Actions -->
+        <div class="actions">
+          <button class="btn primary" type="submit">Submit feedback</button>
+          <button class="btn ghost" type="reset">Reset</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<script>
+  /* Welcome texts + smooth switching for both lines */
+  const texts = {
+    ru:{welcome:"ДОБРО ПОЖАЛОВАТЬ!", lead:"Пожалуйста, выберите язык, чтобы продолжить."},
+    en:{welcome:"Welcome!",           lead:"Please choose a language to continue."}
+  };
+  const welcomeText = document.getElementById('welcome-text');
+  const welcomeLead = document.getElementById('welcome-lead');
+  const langs = ['ru','en'];
+  let idx = 0;
+  const SWITCH_MS = 10000;
+
+  function switchWelcome(){
+    const lang = langs[idx % langs.length];
+    // fade-out both
+    welcomeText.classList.remove('show');
+    welcomeLead.classList.remove('show');
+
+    setTimeout(()=>{
+      // swap texts
+      welcomeText.textContent = texts[lang].welcome;
+      welcomeLead.textContent = texts[lang].lead;
+      // fade-in both
+      setTimeout(()=>{
+        welcomeText.classList.add('show');
+        welcomeLead.classList.add('show');
+      }, 100);
+    }, 1500); // time for fade-out before swapping
+    idx++;
+  }
+  // initial & interval
+  switchWelcome();
+  setInterval(switchWelcome, SWITCH_MS);
+
+  // Routing to forms
+  function showForm(lang){
+    document.getElementById('welcome').classList.remove('active');
+    document.getElementById('form-screen-ru').classList.remove('active');
+    document.getElementById('form-screen-en').classList.remove('active');
+    if(lang === 'ru'){
+      document.documentElement.lang = 'ru';
+      document.getElementById('form-screen-ru').classList.add('active');
+    } else {
+      document.documentElement.lang = 'en';
+      document.getElementById('form-screen-en').classList.add('active');
+    }
+  }
+</script>
+
+</body>
+</html>
